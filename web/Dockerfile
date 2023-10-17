@@ -10,7 +10,7 @@ COPY nginx/upstreams.conf /etc/nginx/conf.d/upstreams.conf
 COPY nginx/mainsail.conf /etc/nginx/conf.d/default.conf
 
 RUN apt-get update \
-    && apt-get install -y unzip wget sudo
+    && apt-get install -y unzip wget
 
 RUN apt-get -y autoremove \
     && apt-get clean \
