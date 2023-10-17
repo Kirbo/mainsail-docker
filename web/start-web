@@ -10,6 +10,7 @@ fi
 
 if ! [ -f "has_run" ]; then
     touch has_run
+    mkdir -p /home/mainsail/klipper_logs
     sudo chown -hR mainsail:mainsail /home/mainsail
 fi
 
