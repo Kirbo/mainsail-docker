@@ -2,15 +2,15 @@
 
 cd /home/mainsail
 
-if ! [ -f "has_run" ]; then
-    touch has_run
-    sudo chown -hR mainsail:mainsail .[^.]*
+if ! [ -d "mainsail" ]; then
+    wget https://github.com/mainsail-crew/mainsail/releases/latest/download/mainsail.zip
+    mkdir mainsail
+    unzip -o -d mainsail mainsail.zip
 fi
 
-if ! [ -d "mainsail" ]; then
-    su mainsail -c "wget https://github.com/meteyou/mainsail/releases/latest/download/mainsail.zip"
-    su mainsail -c "mkdir mainsail"
-    su mainsail -c "unzip -o -d mainsail mainsail.zip"
+if ! [ -f "has_run" ]; then
+    touch has_run
+    sudo chown -hR mainsail:mainsail mainsail
 fi
 
 nginx -t
