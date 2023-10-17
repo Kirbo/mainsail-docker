@@ -19,6 +19,12 @@ if ! [ -d "klipper" ]; then
     cd klipper
     chmod +x ./scripts/install-debian.sh
     ./scripts/install-debian.sh
+
+    cd ..
+    git clone https://github.com/Arksine/moonraker
+    cd moonraker
+    chmox +x scripts/install-moonraker.sh
+    ./scripts/install-moonraker.sh
 fi
 
 sudo -S rm /bin/systemctl
