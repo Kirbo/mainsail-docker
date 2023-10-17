@@ -21,6 +21,10 @@ if ! [ -d "klipper" ]; then
     ./scripts/install-debian.sh
 
     cd ..
+    cd /home/mainsail/klipper_config
+    ln -s ../printer_data/config/moonraker.conf .
+
+    cd ..
     git clone https://github.com/Arksine/moonraker
     cd moonraker
     chmox +x scripts/install-moonraker.sh
