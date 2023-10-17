@@ -10,7 +10,9 @@ COPY nginx/upstreams.conf /etc/nginx/conf.d/upstreams.conf
 COPY nginx/mainsail.conf /etc/nginx/conf.d/default.conf
 
 RUN apt-get update \
-    && apt-get install -y unzip wget
+    && apt-get install -y unzip wget sudo git
+
+RUN echo "mainsail ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 RUN apt-get -y autoremove \
     && apt-get clean \
